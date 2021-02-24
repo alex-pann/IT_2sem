@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
 
 class Figure {
@@ -101,40 +100,52 @@ private:
     int n = 0;
 };
 
+int angles_amount(Figure* f) {
+    return f->angles();
+}
+
+double perimeter(Figure* f) {
+    return f->perimeter();
+}
+double square(Figure* f) {
+    return f->square();
+}
+
 
 int main() {
     std::cout << "Square:" << std::endl;
     Square sq(5);
-    std::cout << "Number of angles: " << sq.angles() << std::endl;
-    std::cout << "Perimeter: " << sq.perimeter() << std::endl;
-    std::cout << "Square: " << sq.square() << std::endl;
+    std::cout << "Number of angles: " << angles_amount(&sq) << std::endl;
+    std::cout << "Perimeter: " << perimeter(&sq) << std::endl;
+    std::cout << "Square: " << square(&sq) << std::endl;
     std::cout << std::endl;
 
     std::cout << "Rectangle:" << std::endl;
     Rectangle rec(5, 2);
-    std::cout << "Number of angles: " << rec.angles() << std::endl;
-    std::cout << "Perimeter: " << rec.perimeter() << std::endl;
-    std::cout << "Square: " << rec.square() << std::endl;
+    std::cout << "Number of angles: " << angles_amount(&rec) << std::endl;
+    std::cout << "Perimeter: " << perimeter(&rec) << std::endl;
+    std::cout << "Square: " << square(&rec) << std::endl;
     std::cout << std::endl;
 
     std::cout << "Triangle:" << std::endl;
     Triangle tr(3,4,5);
-    std::cout << "Number of angles: " << tr.angles() << std::endl;
-    std::cout << "Perimeter: " << tr.perimeter() << std::endl;
-    std::cout << "Square: " << tr.square() << std::endl;
+    std::cout << "Number of angles: " << angles_amount(&tr) << std::endl;
+    std::cout << "Perimeter: " << perimeter(&tr) << std::endl;
+    std::cout << "Square: " << square(&tr) << std::endl;
     std::cout << std::endl;
 
     std::cout << "Circle:" << std::endl;
     Circle circ(5);
-    std::cout << "Number of angles: " << circ.angles() << std::endl;
-    std::cout << "Perimeter: " << circ.perimeter() << std::endl;
-    std::cout << "Square: " << circ.square() << std::endl;
+    std::cout << "Number of angles: " << angles_amount(&circ) << std::endl;
+    std::cout << "Perimeter: " << perimeter(&circ) << std::endl;
+    std::cout << "Square: " << square(&circ) << std::endl;
     std::cout << std::endl;
 
     std::cout << "Ellipse:" << std::endl;
     Ellipse el(2, 3);
-    std::cout << "Number of angles: " << el.angles() << std::endl;
-    std::cout << "Perimeter: " << el.perimeter() << std::endl;
-    std::cout << "Square: " << el.square() << std::endl;
+    std::cout << "Number of angles: " << angles_amount(&el) << std::endl;
+    std::cout << "Perimeter: " << perimeter(&el) << std::endl;
+    std::cout << "Square: " << square(&el) << std::endl;
+
     return 0;
 }
