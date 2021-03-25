@@ -76,9 +76,9 @@ int main() {
     std::cout << std::accumulate(v.begin(), v.end(), 0);
     std::cout << std::endl;
 
-//9) ?
+//9)
     std::cout << "9) Composition of elements in deque: ";
-    std::cout << std::accumulate(deque.begin(), deque.end(), 1, [](int x, int y){return x * y;});
+    std::cout << std::accumulate(deque.begin(), deque.end(), 1.0, [](double x, double y){return x * y;});
     std::cout << std::endl;
 
 //10)
