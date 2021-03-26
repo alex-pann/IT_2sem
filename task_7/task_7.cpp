@@ -21,9 +21,10 @@ int main() {
     std::iota(front_deq.begin(), front_deq.end(), 3);
     std::default_random_engine engine( std::chrono::steady_clock::now().time_since_epoch().count());
     std::shuffle(std::begin(front_deq), std::end(front_deq), engine);
+    std::uniform_int_distribution d(1, 10);
 
     for (auto i: front_deq) {
-        deque.push_front(i);
+        deque.push_front(d(engine));
     }
 
     std::cout << "2) new deque: ";
@@ -101,8 +102,11 @@ int main() {
 
 //12)
     std::cout << "12) Vector (cycle for): ";
-    for(auto i : v) {
-        std::cout << i << ' ';
+
+    std::vector<int>::iterator it;
+
+    for (it = v.begin(); it != v.end(); ++it) {
+        std::cout << *it << " ";
     }
     std::cout << std::endl;
 
